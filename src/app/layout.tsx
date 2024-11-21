@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col gap-10 items-center p-10">
         <Providers>
-          <div className="container mx-auto">{children}</div>
+          <div className="">{children}</div>
           <Navbar />
         </Providers>
       </body>
