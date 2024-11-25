@@ -12,7 +12,7 @@ function HomePage() {
 
   return (
     <div className="relative w-[375px] h-[812px] flex flex-col justify-center items-center overflow-hidden">
-      
+
       <div className="absolute top-0 left-0 w-full h-full -z-10">
         <Image
           src={Loginimagen}
@@ -20,7 +20,7 @@ function HomePage() {
           layout="fill"
           objectFit="cover"
         />
-        
+
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-80"></div>
       </div>
 
@@ -34,22 +34,22 @@ function HomePage() {
           />
         </div>
         <h1 className="text-4xl font-bold text-white mb-2">Klubo</h1>
-        <p className="text-lg text-white mb-8">Iniciar sesión o Registrarse</p>
-        <div className="mt-[150px] flex flex-col gap-2.5">
+        <p className="text-[20px] font-semibold text-white mb-8">Iniciar sesión o Registrate</p>
+        <div className="mt-[420px] flex flex-col gap-2.5">
           <Link href="/login">
-            <button className="bg-[#FA861F] text-black border-none py-3 px-4 text-lg w-[80%] mx-auto rounded cursor-pointer transition-colors duration-300 hover:bg-orange-500">
+          <button className="bg-[#FA861F] text-black border-none w-[331px] h-[39px] text-lg mx-auto rounded cursor-pointer transition-colors duration-300 hover:bg-orange-500">
               Iniciar sesión
             </button>
           </Link>
           <Link href="/register">
-            <button className="border-2 border-[#FA861F] text-[#FA861F] py-3 px-4 text-lg w-[80%] mx-auto rounded cursor-pointer transition-colors duration-300 hover:bg-[#FA861F] hover:text-black">
-              Registrarse
+          <button className="border-2 border-[#FA861F] text-[#FA861F] w-[331px] h-[39px] text-lg mx-auto rounded cursor-pointer transition-colors duration-300 hover:bg-[#FA861F] hover:text-black">
+              Registrarte
             </button>
           </Link>
         </div>
       </div>
     </div>
-    
+
   );
 }
 
