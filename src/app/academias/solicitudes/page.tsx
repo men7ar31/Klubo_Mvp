@@ -61,11 +61,11 @@ export default function SolicitudesPage() {
       {solicitudes.length === 0 ? (
         <p>Sin solicitudes.</p>
       ) : (
-        <ul className="w-[335px] bg-[#d9d9d980] rounded-[20px] shadow">
+        <ul className="w-[335px] flex flex-col gap-5">
           {solicitudes.map((solicitud) => (
             <li
               key={solicitud._id}
-              className="flex h-[56px] justify-around items-center"
+              className="flex h-[56px] justify-around items-center bg-[#d9d9d980] rounded-[20px] shadow-md"
             >
               <div>
                 <p>
