@@ -68,7 +68,7 @@ export default function SolicitudesPage() {
               className="flex h-[56px] justify-around items-center bg-[#d9d9d980] rounded-[20px] shadow-md"
             >
               <div>
-                <p>
+                <p className="font-semibold">
                   {" "}
                   {solicitud.user_id
                     ? `${solicitud.user_id.firstname} ${solicitud.user_id.lastname}s`
