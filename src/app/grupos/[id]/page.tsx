@@ -101,7 +101,22 @@ export default function GrupoDetailPage({ params }: { params: { id: string } }) 
   return (
     <div className="flex flex-col items-center p-5">
       <div className="coverAcademias w-[390px] h-[190px] bg-cover bg-center" style={{ backgroundImage: `url('https://i.pinimg.com/736x/33/3c/3b/333c3b3436af10833aabeccd7c91c701.jpg')` }}></div>
-
+      <button
+     type="button"
+     onClick={() => router.back()}
+     className=" absolute top-2 left-2 bg-black text-white p-2 rounded-full shadow-md hover:bg-blue-600 transition duration-300">
+    <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="currentColor"
+    viewBox="0 0 16 16"
+    width="24"
+    height="24">
+    <path
+      fillRule="evenodd"
+      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+        />
+    </svg>
+</button>
       <div className="flex justify-center gap-5 mt-[-60px]">
         <div className="logo h-[120px] w-[120px] bg-slate-400 rounded-full border border-[#333] flex justify-center items-center">
           <img src="https://i.pinimg.com/736x/33/3c/3b/333c3b3436af10833aabeccd7c91c701.jpg" className="rounded-full" alt="Logo" />
