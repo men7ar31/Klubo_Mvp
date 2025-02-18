@@ -103,52 +103,61 @@ export default function HistorialPagos() {
       <div className="flex justify-between items-center h-[60px]">
         <h2 className="text-lg font-semibold">Historial de pagos</h2>
       </div>
-      <ul className="space-y-4">
-        {pagos.map((pago, index) => (
-          <div key={pago._id}>
-            {(index === 0 ||
-              new Date(pagos[index - 1].fecha_pago).toLocaleDateString() !==
-                new Date(pago.fecha_pago).toLocaleDateString()) && (
-              <div className="text-sm font-semibold text-gray-600 bg-gray-300 px-3 py-1 rounded-md mb-2">
-                {new Date(pago.fecha_pago).toLocaleDateString()}
-              </div>
-            )}
-            <li className="flex items-center bg-white p-4 rounded-lg shadow-sm">
-              <img
-                src="/logo.png"
-                alt="Logo"
-                className="w-10 h-10 rounded-full mr-3"
-              />
-              <div className="flex-1">
-                <p className="font-medium">
-                  {grupos[pago.grupo_id] || "Grupo desconocido"}
-                </p>
-                <p className="text-sm text-gray-500">
-                  Mes:{" "}
-                  {new Date(pago.fecha_pago).toLocaleString("es-ES", {
-                    month: "long",
-                  })}
-                </p>
-                {pago.estado === "aprobado" ? (
-                  <p className="text-sm text-green-500">{pago.estado}</p>
-                ) : (
-                  <p className="text-sm text-red-500">{pago.estado}</p>
-                )}
-              </div>
-              <div className="text-right">
-              {formData.rol !== "dueño de academia" && ( <p className="text-red-500 font-semibold">-${pago.monto}</p>)}
-                {formData.rol=== "dueño de academia" && ( <p className="text-green-500 font-semibold">+${pago.monto}</p>)}
-                <p className="text-sm text-gray-500">
-                  {new Date(pago.fecha_pago).toLocaleTimeString([], {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })}
-                </p>
-              </div>
-            </li>
-          </div>
-        ))}
-      </ul>
+      {pagos.length === 0 ? (
+        <p className="text-center text-gray-500 py-4">Historial de pagos vacío</p>
+      ) : (
+        <ul className="space-y-4">
+          {pagos.map((pago, index) => (
+            <div key={pago._id}>
+              {(index === 0 ||
+                new Date(pagos[index - 1].fecha_pago).toLocaleDateString() !==
+                  new Date(pago.fecha_pago).toLocaleDateString()) && (
+                <div className="text-sm font-semibold text-gray-600 bg-gray-300 px-3 py-1 rounded-md mb-2">
+                  {new Date(pago.fecha_pago).toLocaleDateString()}
+                </div>
+              )}
+              <li className="flex items-center bg-white p-4 rounded-lg shadow-sm">
+                <img
+                  src="/logo.png"
+                  alt="Logo"
+                  className="w-10 h-10 rounded-full mr-3"
+                />
+                <div className="flex-1">
+                  <p className="font-medium">
+                    {grupos[pago.grupo_id] || "Grupo desconocido"}
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    Mes:{" "}
+                    {new Date(pago.fecha_pago).toLocaleString("es-ES", {
+                      month: "long",
+                    })}
+                  </p>
+                  {pago.estado === "aprobado" ? (
+                    <p className="text-sm text-green-500">{pago.estado}</p>
+                  ) : (
+                    <p className="text-sm text-red-500">{pago.estado}</p>
+                  )}
+                </div>
+                <div className="text-right">
+                  {formData.rol !== "dueño de academia" && (
+                    <p className="text-red-500 font-semibold">-${pago.monto}</p>
+                  )}
+                  {formData.rol === "dueño de academia" && (
+                    <p className="text-green-500 font-semibold">+${pago.monto}</p>
+                  )}
+                  <p className="text-sm text-gray-500">
+                    {new Date(pago.fecha_pago).toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                  </p>
+                </div>
+              </li>
+            </div>
+          ))}
+        </ul>
+      )}
     </div>
-  );
+);
+
 }

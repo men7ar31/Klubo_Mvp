@@ -19,6 +19,7 @@ export default function EditarGrupo({ params }: { params: { id: string } }) {
     objetivos: "",
     cuota_mensual: "",
     tipo_grupo: "",
+    tiempo_promedio: "",
   });
   const [profileImage, setProfileImage] = useState<string | null>(null);
   const [uploadingImage, setUploadingImage] = useState(false);
@@ -126,6 +127,7 @@ export default function EditarGrupo({ params }: { params: { id: string } }) {
             />
             <label className="form-label">Nombre del Grupo</label>
           </div>
+
           {/* Campos adicionales */}
           <div className="relative mb-6">
             <textarea
@@ -136,6 +138,60 @@ export default function EditarGrupo({ params }: { params: { id: string } }) {
               onChange={handleChange}
             ></textarea>
             <label className="form-label">Descripción</label>
+          </div>
+
+          <div className="relative mb-6">
+            <input
+              type="text"
+              name="horario"
+              className="form-input peer"
+              placeholder=" "
+              value={formData.horario}
+              onChange={handleChange}
+              required
+            />
+            <label className="form-label">Horario</label>
+          </div>
+
+          <div className="relative mb-6">
+            <input
+              type="text"
+              name="horario"
+              className="form-input peer"
+              placeholder=" "
+              value={formData.ubicacion}
+              onChange={handleChange}
+              required
+            />
+            <label className="form-label">Ubicación</label>
+          </div>
+
+          <div className="relative mb-6">
+            <input
+              type="text"
+              name="tiempo_promedio"
+              className="form-input peer"
+              placeholder=" "
+              value={formData.tiempo_promedio}
+              onChange={handleChange}
+              required
+            />
+            <label className="form-label">Tiempo promedio</label>
+          </div>
+
+          <div className="relative mb-6">
+            <select
+              name="nivel"
+              className="form-input peer"
+              value={formData.nivel}
+              onChange={handleChange}
+              required
+            >
+              <option value="nivel">Facil</option>
+              <option value="distancia">Medio</option>
+              <option value="otros">Dificil</option>
+            </select>
+            <label className="form-label">Nivel</label>
           </div>
 
           <div className="relative mb-6">
@@ -151,6 +207,19 @@ export default function EditarGrupo({ params }: { params: { id: string } }) {
               <option value="otros">Otros</option>
             </select>
             <label className="form-label">Tipo de Grupo</label>
+          </div>
+
+          <div className="relative mb-6">
+            <input
+              type="text"
+              name="cuota"
+              className="form-input peer"
+              placeholder=" "
+              value={formData.cuota_mensual}
+              onChange={handleChange}
+              required
+            />
+            <label className="form-label">Cuota</label>
           </div>
 
           <div className="mt-4 text-[#E5E5E5]">

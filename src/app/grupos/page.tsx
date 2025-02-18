@@ -16,6 +16,7 @@ const CrearGrupo = () => {
     cuota_mensual: "",
     descripcion: "",
     tipo_grupo: "",
+    tiempo_promedio: "",
   });
   const [loading, setLoading] = useState(true);
 
@@ -64,6 +65,7 @@ const CrearGrupo = () => {
           cuota_mensual: "",
           descripcion: "",
           tipo_grupo: "",
+          tiempo_promedio: "",
         });
         router.push("/dashboard");
       } else {
@@ -126,14 +128,17 @@ const CrearGrupo = () => {
         />
 
         {/* Nivel */}
-        <input
-          type="text"
+        <select
           name="nivel"
           value={grupo.nivel}
           onChange={handleInputChange}
-          placeholder="Dificultad"
-          className="bg-[#F4F4F4] border-b"
-        />
+          className="bg-[#F4F4F4] border-b text-gray-400"
+        >
+          <option value="">Dificultad</option>
+          <option value="nivel">Facil</option>
+          <option value="distancia">Medio</option>
+          <option value="otros">Dificil</option>
+        </select>
 
         {/* Ubicación */}
         <input
@@ -152,6 +157,16 @@ const CrearGrupo = () => {
           value={grupo.horario}
           onChange={handleInputChange}
           placeholder="Horario"
+          className="bg-[#F4F4F4] border-b"
+        />
+
+           {/* tiempo */}
+           <input
+          type="text"
+          name="tiempoPromedio"
+          value={grupo.tiempo_promedio}
+          onChange={handleInputChange}
+          placeholder="Tiempo promedio"
           className="bg-[#F4F4F4] border-b"
         />
 

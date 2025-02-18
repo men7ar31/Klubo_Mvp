@@ -291,7 +291,7 @@ export default function AcademiaDetailPage({ params }: { params: { id: string } 
   <button
     onClick={handleJoinAcademia}
     disabled={hasActiveRequest}
-    className={`border w-[125px] h-[32px] rounded-[10px] self-center ${
+    className={`border w-[145px] h-[40px] rounded-[10px] self-center ${
       hasActiveRequest ? "border-gray-400 text-gray-400" : "border-[#FF9A3D] text-[#FF9A3D]"
     }`}
   >
